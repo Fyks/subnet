@@ -106,8 +106,8 @@ const cart = {
     if (checkoutItems) {
       checkoutItems.innerHTML = this.items.map(item => `
         <div class="checkout-item">
-          <span>${item.name} </span>
-          <span>${item.price} руб.</span>
+          <span>${item.name}</span>
+          <span> ${item.price} руб.</span>
         </div>
       `).join('');
     }
