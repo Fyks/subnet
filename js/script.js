@@ -58,8 +58,7 @@ const cart = {
       cartItems.innerHTML = this.items.map((item, index) => `
         <div class="cart-item">
           <span>${item.name} ${item.price} руб.</span>
-          
-          <button onclick="cart.removeItem(${index})">×</button>
+          <button onclick="cart.removeItem(${index})">✗</button>
         </div>
       `).join('');
       
