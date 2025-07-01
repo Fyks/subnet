@@ -167,8 +167,8 @@ function createOrderMessage(order) {
 <i>${new Date().toLocaleString()}</i>
 
 <b>👤 Клиент:</b> ${order.customer.name}
-<b>📧 Email:</b> ${order.customer.email}
-<b>✉️ Telegram:</b> ${order.customer.telegram || 'не указан'}
+<b>✉️ Telegram:</b> ${order.customer.telegram}
+<b>📧 Email:</b> ${order.customer.email || 'не указан'}
 
 <b>🛒 Товары:</b>
 ${order.items.map(i => `- ${i.name}: ${i.price} руб.`).join('\n')}
@@ -259,11 +259,11 @@ function setupOrderForm() {
       alert('Ваша корзина пуста!');
       return window.location.href = 'cart.html';
     }
-
+    const telegram = document.getElementById('telegram').value.trim();
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
-    
-    if (!name || !email) {
+
+    if (!name || !telegram) {
       return alert('Пожалуйста, заполните обязательные поля');
     }
 
@@ -274,8 +274,8 @@ function setupOrderForm() {
         id: generateId(),
         customer: { 
           name,
-          email,
-          telegram: document.getElementById('telegram').value.trim()
+          telegram,
+          email
         },
         items: [...cart.items],
         total: cart.total,
