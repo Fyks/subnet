@@ -85,7 +85,7 @@ const cart = {
               <h4>${item.name}</h4>
               <span class="item-price">${item.price} руб.</span>
             </div>
-            <button onclick="cart.removeItem(${index});">×</button>
+            <button onclick="cart.removeItem(${index});">✗</button>
           </div>
         `).join('');
       }
