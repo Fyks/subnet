@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Plus - Subnet Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="theme-color" content="#121212">
+</head>
+<body>
+    <header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Subnet Store">
+        <h1>Subnet Store</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../about.html">О нас</a></li>
+          <li><a href="../contacts.html">Контакты</a></li>
+        </ul>
+        <div class="cart-wrapper">
+          <a href="../cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+          <div class="cart-dropdown">
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+            <a href="../checkout.html" class="btn">Оформить заказ</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <main class="container product-page">
+        <section class="product-details">
+            <img src="../images/gpt-icon.png" alt="ChatGPT Plus" class="product-image">
+            <div class="product-card" data-id="gpt">
+                <h2>ChatGPT Plus</h2>
+                <p class="price">От 999 руб./месяц</p>
+                <ul class="features">
+                    <li>Доступ к GPT-4 (включая GPT-4 Turbo)</li>
+                    <li>Приоритетный доступ в часы пик</li>
+                    <li>Более быстрые ответы</li>
+                    <li>Доступ к новым функциям первым</li>
+                    <li>Возможность загрузки файлов для анализа</li>
+                </ul>
+                <button class="btn buy-btn">Купить сейчас</button>
+            </div>
+        </section>
+
+        <section class="description">
+            <h3>Описание</h3>
+            <p>ChatGPT Plus предоставляет доступ к самой продвинутой версии ИИ от OpenAI. Подписчики получают приоритетный доступ к системе даже в часы пиковой нагрузки, могут использовать более мощную модель GPT-4 и получают доступ к новым функциям раньше других пользователей.</p>
+            
+            <h3>Дополнительные возможности</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Доступность</h4>
+                    <p>Работает 24/7 с минимальным временем простоя</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Мультимодальность</h4>
+                    <p>Возможность анализа изображений (в поддерживаемых версиях)</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Длинный контекст</h4>
+                    <p>Запоминание до 128k токенов контекста</p>
+                </div>
+                <div class="feature-card">
+                    <h4>API доступ</h4>
+                    <p>Возможность интеграции с вашими приложениями</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Subnet Store. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="../about.html">О нас</a>
+                <a href="../contacts.html">Контакты</a>
+                <a href="../privacy.html">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

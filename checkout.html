@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - Subnet Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="theme-color" content="#121212">
+</head>
+<body>
+    <header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="images/logo.png" alt="Subnet Store">
+        <h1>Subnet Store</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="cart-wrapper">
+          <a href="cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+          <div class="cart-dropdown">
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+            <a href="checkout.html" class="btn">Оформить заказ</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <main class="container checkout-page">
+        <h2>Оформление заказа</h2>
+        
+        <div class="checkout-grid">
+            <section class="checkout-form">
+                <h3>Контактные данные</h3>
+                <form id="order-form">
+                    <div class="form-group">
+                        <label for="name">ФИО*</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telegram">Telegram (для связи)</label>
+                        <input type="text" id="telegram" placeholder="@username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Примечания к заказу</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="order-summary">
+                <h3>Ваш заказ</h3>
+                <div id="checkout-items">
+                    <!-- Товары будут добавляться через JS -->
+                </div>
+                <div class="summary-total">
+                    <span>Итого:</span>
+                    <span id="checkout-total">0</span>
+                </div>
+            </section>
+        </div>
+        
+        <button type="submit" form="order-form" class="btn submit-order">Подтвердить заказ</button>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Subnet Store. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="about.html">О нас</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script>
+document.getElementById('order-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // Валидация формы
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  
+  if (!name || !email) {
+    alert('Пожалуйста, заполните обязательные поля');
+    return;
+  }
+
+  // Показываем загрузку
+  const loader = document.createElement('div');
+  loader.className = 'loader';
+  document.body.appendChild(loader);
+
+  try {
+    // В реальном проекте здесь будет fetch-запрос к серверу
+    const orderData = {
+      customer: { name, email },
+      items: cart.items,
+      total: cart.total
+    };
+    
+    // Имитация API-запроса
+    const response = await mockApiSubmit(orderData);
+    
+    if (response.success) {
+      // Очищаем корзину
+      cart.items = [];
+      cart.total = 0;
+      cart.updateCartUI();
+      localStorage.setItem('cart', JSON.stringify(cart.items));
+      
+      // Редирект на страницу успеха
+      window.location.href = `order-success.html?id=${response.orderId}`;
+    }
+  } catch (error) {
+    console.error('Ошибка:', error);
+    alert('Произошла ошибка при оформлении заказа');
+  } finally {
+    document.body.removeChild(loader);
+  }
+});
+
+// Мок функция для примера
+async function mockApiSubmit(data) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({
+        success: true,
+        orderId: 'ORD-' + Date.now()
+      });
+    }, 1500);
+  });
+}
+    </script>
+</body>
+</html>

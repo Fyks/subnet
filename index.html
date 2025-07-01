@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnet Store - Магазин цифровых услуг</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="theme-color" content="#121212">
+</head>
+<body>
+    <header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="images/logo.png" alt="Subnet Store">
+        <h1>Subnet Store</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="cart-wrapper">
+          <a href="cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+          <div class="cart-dropdown">
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+            <a href="checkout.html" class="btn">Оформить заказ</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Лучшие цифровые услуги по выгодным ценам</h2>
+            <p>Подписки на популярные сервисы с гарантией качества</p>
+        </section>
+
+        <section class="products">
+            <h2>Наши продукты</h2>
+            <div class="product-grid">
+                <div class="product-card" data-id="spotify">
+                    <img src="images/spotify-icon.png" alt="Spotify Premium">
+                    <h3>Spotify Premium</h3>
+                    <p>От 199 руб./мес</p>
+                    <a href="products/spotify.html" class="btn">Подробнее</a>
+                </div>
+                <div class="product-card" data-id="discord">
+                    <img src="images/discord-icon.png" alt="Discord Nitro">
+                    <h3>Discord Nitro</h3>
+                    <p>От 299 руб./мес</p>
+                    <a href="products/discord.html" class="btn">Подробнее</a>
+                </div>
+                <div class="product-card" data-id="youtube">
+                    <img src="images/youtube-icon.png" alt="YouTube Premium">
+                    <h3>YouTube Premium</h3>
+                    <p>От 249 руб./мес</p>
+                    <a href="products/youtube.html" class="btn">Подробнее</a>
+                </div>
+                <div class="product-card" data-id="gpt">
+                    <img src="images/gpt-icon.png" alt="GPT Plus">
+                    <h3>GPT Plus</h3>
+                    <p>От 999 руб./мес</p>
+                    <a href="products/gpt.html" class="btn">Подробнее</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Subnet Store. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="about.html">О нас</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

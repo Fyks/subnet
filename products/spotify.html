@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Premium - Subnet Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="theme-color" content="#121212">
+</head>
+<body>
+    <header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="../images/logo.png" alt="Subnet Store">
+        <h1>Subnet Store</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../about.html">О нас</a></li>
+          <li><a href="../contacts.html">Контакты</a></li>
+        </ul>
+        <div class="cart-wrapper">
+          <a href="../cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+          <div class="cart-dropdown">
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+            <a href="../checkout.html" class="btn">Оформить заказ</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+    <main class="container product-page">
+        <section class="product-details">
+            <img src="../images/spotify-icon.png" alt="Spotify Premium" class="product-image">
+            <div class="product-card" data-id="spotify">
+                <h2>Spotify Premium</h2>
+                <p class="price">От 199 руб./месяц</p>
+                <ul class="features">
+                    <li>Скачивание музыки для оффлайн-прослушивания</li>
+                    <li>Прослушивание без рекламы</li>
+                    <li>Высокое качество звука</li>
+                    <li>Неограниченные пропуски треков</li>
+                </ul>
+                <button class="btn buy-btn">Купить сейчас</button>
+            </div>
+        </section>
+
+        <section class="description">
+            <h3>Описание</h3>
+            <p>Spotify Premium открывает полный доступ к библиотеке из миллионов треков без рекламы. Скачивайте музыку для прослушивания без интернета и наслаждайтесь высоким качеством звука.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Subnet Store. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="../about.html">О нас</a>
+                <a href="../contacts.html">Контакты</a>
+                <a href="../privacy.html">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

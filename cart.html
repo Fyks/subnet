@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Subnet Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta name="theme-color" content="#121212">
+</head>
+<body>
+    <header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="images/logo.png" alt="Subnet Store">
+        <h1>Subnet Store</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="cart-wrapper">
+          <a href="cart.html" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+          <div class="cart-dropdown">
+            <div id="cart-items"></div>
+            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+            <a href="checkout.html" class="btn">Оформить заказ</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <main class="container cart-page">
+        <h2>Ваша корзина</h2>
+        
+        <div id="cart-items-list" class="cart-items">
+            <!-- Товары будут добавляться через JS -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Товары:</span>
+                <span id="cart-subtotal">0</span>
+            </div>
+            <div class="summary-row total">
+                <span>Итого:</span>
+                <span id="cart-total">0</span>
+            </div>
+            
+            <a href="checkout.html" class="btn checkout-btn">Оформить заказ</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Subnet Store. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="about.html">О нас</a>
+                <a href="contacts.html">Контакты</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+    <script>
+        // Обновляем корзину при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartPage();
+        });
+        
+        function updateCartPage() {
+            const cartItems = document.getElementById('cart-items-list');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+            const cartTotal = document.getElementById('cart-total');
+            
+            if (cart.items.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Ваша корзина пуста</p>';
+            } else {
+                cartItems.innerHTML = cart.items.map((item, index) => `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-info">
+                            <h4>${item.name}</h4>
+                            <span class="item-price">${item.price}</span>
+                        </div>
+                        <button onclick="cart.removeItem(${index}); updateCartPage();">×</button>
+                    </div>
+                `).join('');
+            }
+            
+            cartSubtotal.textContent = cart.total + '';
+            cartTotal.textContent = cart.total + '';
+        }
+    </script>
+</body>
+</html>
