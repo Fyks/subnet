@@ -261,7 +261,6 @@ function setupOrderForm() {
     }
     const telegram = document.getElementById('telegram').value.trim();
     const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
 
     if (!name || !telegram) {
       return alert('Пожалуйста, заполните обязательные поля');
@@ -275,7 +274,7 @@ function setupOrderForm() {
         customer: { 
           name,
           telegram,
-          email
+          email: document.getElementById('email').value.trim()
         },
         items: [...cart.items],
         total: cart.total,
