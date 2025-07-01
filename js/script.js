@@ -57,8 +57,8 @@ const cart = {
     if (cartItems && cartTotal) {
       cartItems.innerHTML = this.items.map((item, index) => `
         <div class="cart-item">
-          <span>${item.name}</span>
-          <span>${item.price} руб.</span>
+          <span>${item.name} ${item.price} руб.</span>
+          
           <button onclick="cart.removeItem(${index})">×</button>
         </div>
       `).join('');
@@ -107,7 +107,7 @@ const cart = {
       checkoutItems.innerHTML = this.items.map(item => `
         <div class="checkout-item">
           <span>${item.name}</span>
-          <span> ${item.price} руб.</span>
+          <span>${item.price} руб.</span>
         </div>
       `).join('');
     }
