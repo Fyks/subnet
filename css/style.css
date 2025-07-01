@@ -180,13 +180,14 @@ nav a:hover {
 }
 
 .product-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 6px 18px var(--shadow-color);
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 1px solid var(--card-border);
+            width: 100%;
+            max-width: 500px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 18px var(--shadow-color);
+            border: 1px solid var(--card-border);
+            margin-top: 1.5rem;
 }
 
 .product-card:hover {
@@ -244,27 +245,26 @@ nav a:hover {
 
 /* Product Page */
 .product-page {
-  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 .product-details {
-  display: flex;
-  gap: 50px;
-  margin-bottom: 50px;
-  align-items: center;
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px var(--shadow-color);
-  border: 1px solid var(--card-border);
-  max-width: 1200px; /* Ограничиваем ширину */
-  width: 100%;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
 }
 
 .product-image {
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
 }
 
 .product-info h2 {
@@ -451,6 +451,9 @@ footer p {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+  .product-card {
+                padding: 1.5rem;
+            }
   .product-details {
     flex-direction: column;
     text-align: center;
@@ -696,8 +699,6 @@ footer p {
 .summary-row.total {
   font-size: 1.2rem;
   font-weight: 600;
-  border-top: 1px solid var(--card-border);
-  padding-top: 15px;
 }
 
 .checkout-btn {

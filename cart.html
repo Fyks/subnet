@@ -49,11 +49,8 @@
         </div>
         
         <div class="cart-summary">
-            <div class="summary-row">
-                <span>Товары:</span>
-                <span id="cart-subtotal">0</span>
-            </div>
-            <div class="summary-row">
+
+            <div class="summary-row total">
                 <span>Итого:</span>
                 <span id="cart-subtotal">0</span>
             </div>
@@ -74,35 +71,5 @@
     </footer>
     
     <script src="js/script.js"></script>
-    <script>
-        // Обновляем корзину при загрузке страницы
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCartPage();
-        });
-        
-        function updateCartPage() {
-            const cartItems = document.getElementById('cart-items-list');
-            const cartSubtotal = document.getElementById('cart-subtotal');
-            const cartTotal = document.getElementById('cart-total');
-            
-            if (cart.items.length === 0) {
-                cartItems.innerHTML = '<p class="empty-cart">Ваша корзина пуста</p>';
-            } else {
-                cartItems.innerHTML = cart.items.map((item, index) => `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}">
-                        <div class="item-info">
-                            <h4>${item.name}</h4>
-                            <span class="item-price">${item.price}</span>
-                        </div>
-                        <button onclick="cart.removeItem(${index}); updateCartPage();"> ✖ </button>
-                    </div>
-                `).join('');
-            }
-            
-            cartSubtotal.textContent = cart.total + '';
-            cartTotal.textContent = cart.total + '';
-        }
-    </script>
 </body>
 </html>
