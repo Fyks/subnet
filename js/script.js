@@ -116,15 +116,16 @@ const cart = {
   }
 };
 
+function generateOrderId() {
+  return 'ORD-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+}
+
 // ==================== TELEGRAM УВЕДОМЛЕНИЯ ====================
 async function notifySeller(orderData) {
-  // Замените эти значения на реальные!
   const botToken = '7623663107:AAEnjPxKKLvuM37g8XmsTB9UpdmqtLsduDU';
   const chatId = '5756737130';
   
   try {
-    console.log('Начинаем отправку уведомления...');
-    
     const message = `
 <b>🛍️ Новый заказ в Subnet Store #${orderData.id}</b>
 <i>${new Date().toLocaleString()}</i>
@@ -139,32 +140,23 @@ ${orderData.items.map(i => `- ${i.name}: ${i.price} руб.`).join('\n')}
 <b>💰 Итого:</b> ${orderData.total} руб.
 <b>📝 Примечания:</b> ${orderData.notes || 'нет'}`;
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    const response = await fetch(url, {
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         chat_id: chatId,
         text: message,
-        parse_mode: 'HTML',
-        disable_web_page_preview: true
+        parse_mode: 'HTML'
       })
     });
 
     const result = await response.json();
-    console.log('Ответ Telegram:', result);
-
-    if (!result.ok) {
-      throw new Error(result.description || 'Unknown Telegram error');
-    }
-
-    console.log('✅ Уведомление успешно отправлено');
+    if (!result.ok) throw new Error(result.description);
+    
+    console.log('Уведомление отправлено:', orderData.id);
     return true;
   } catch (error) {
-    console.error('❌ Ошибка отправки уведомления:', error);
-    // Не показываем alert пользователю, только логируем
+    console.error('Ошибка отправки:', error);
     return false;
   }
 }
@@ -265,9 +257,10 @@ function setupOrderForm() {
     try {
       // Имитация отправки на сервер
       const orderData = {
+        id: generateOrderId(), // Генерируем ID сразу
         customer: { 
-          name,
-          email,
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
           telegram: document.getElementById('telegram').value.trim()
         },
         items: cart.items,
@@ -279,9 +272,8 @@ function setupOrderForm() {
       const response = await mockApiSubmit(orderData);
       
       if (response.success) {
-
-    await notifySeller(orderData);
-
+  orderData.id = response.orderId; // Обновляем ID если сервер вернул свой
+  await notifySeller(orderData);
         // Очистить корзину после успешного заказа
         cart.items = [];
         cart.total = 0;
@@ -306,7 +298,7 @@ async function mockApiSubmit(data) {
     setTimeout(() => {
       resolve({
         success: true,
-        orderId: 'ORD-' + Date.now()
+        orderId: data.id || 'ORD-' + Date.now() // Используем существующий ID или генерируем новый
       });
     }, 1500);
   });
