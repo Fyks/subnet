@@ -127,7 +127,7 @@ async function notifySeller(orderData) {
   
   try {
     const message = `
-<b>🛍️ Новый заказ в Subnet Store #${orderData.id}</b>
+<b>🛍️ Новый заказ в Subnet Store #${orderData.id || generateOrderId()}</b>
 <i>${new Date().toLocaleString()}</i>
 
 <b>👤 Клиент:</b> ${orderData.customer.name}
