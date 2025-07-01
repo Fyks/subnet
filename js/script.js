@@ -58,7 +58,7 @@ const cart = {
       cartItems.innerHTML = this.items.map((item, index) => `
         <div class="cart-item">
           <span>${item.name} ${item.price} руб.</span>
-          <button onclick="cart.removeItem(${index})">✗</button>
+          <button onclick="cart.removeItem(${index})"> ✖ </button>
         </div>
       `).join('');
       
@@ -85,7 +85,7 @@ const cart = {
               <h4>${item.name}</h4>
               <span class="item-price">${item.price} руб.</span>
             </div>
-            <button onclick="cart.removeItem(${index});">✗</button>
+            <button onclick="cart.removeItem(${index});"> ✖ </button>
           </div>
         `).join('');
       }
