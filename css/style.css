@@ -569,7 +569,7 @@ footer p {
 }
 
 .privacy-policy a {
-  color: var(--primary-light);
+
   text-decoration: none;
   transition: color 0.3s;
 }

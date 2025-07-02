@@ -1,66 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify Premium - Subnet Store</title>
     <link rel="stylesheet" href="../css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<meta name="theme-color" content="#121212">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="theme-color" content="#121212">
 </head>
 <body>
     <header>
-  <div class="container">
-    <div class="header-content">
-      <div class="logo">
-        <img src="../images/logo.png" alt="Subnet Store">
-        <h1>Subnet Store</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Главная</a></li>
-          <li><a href="../about.html">О нас</a></li>
-          <li><a href="../contacts.html">Контакты</a></li>
-        </ul>
-        <div class="cart-wrapper">
-          <a href="../cart.html" class="cart-link">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-          </a>
-          <div class="cart-dropdown">
-            <div id="cart-items"></div>
-            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
-            <a href="../checkout.html" class="btn">Оформить заказ</a>
-          </div>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Subnet Store">
+                    <h1>Subnet Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="../about.html">О нас</a></li>
+                        <li><a href="../contacts.html">Контакты</a></li>
+                    </ul>
+                    <div class="cart-wrapper">
+                        <a href="../cart.html" class="cart-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cart-count">0</span>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div id="cart-items"></div>
+                            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+                            <a href="../checkout.html" class="btn">Оформить заказ</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
-      </nav>
-    </div>
-  </div>
-</header>
+    </header>
 
-    <main class="container product-page">
-        <section class="product-details">
-     <img src="../images/spotify-icon.png" alt="Spotify Premium" class="product-image">
-     <div class="product-card" data-id="spotify">
-     <h2>Spotify Premium</h2>
-     <p class="price">От 199 руб./месяц</p>
-      <ul class="features">
-          <li>Скачивание музыки для оффлайн-прослушивания</li>
-          <li>Прослушивание без рекламы</li>
-          <li>Высокое качество звука</li>
-       <li>Неограниченные пропуски треков</li>
-     </ul>
-      <button class="btn buy-btn">Купить сейчас</button>
-     </div>
-</section>
+    <main class="container">
+        <section class="product-page">
+            <div class="product-details">
+                <img src="../images/spotify-icon.png" alt="Spotify Premium" class="product-image">
+                <div class="product-info">
+                    <h2>Spotify Premium</h2>
+                    <p class="price">От 199 руб./месяц</p>
+                    <ul class="features">
+                        <li>Скачивание музыки для оффлайн-прослушивания</li>
+                        <li>Прослушивание без рекламы</li>
+                        <li>Высокое качество звука (320 кбит/с)</li>
+                        <li>Неограниченные пропуски треков</li>
+                        <li>Персональные плейлисты и рекомендации</li>
+                        <li>Доступ на 6 устройствах</li>
+                    </ul>
+                    <button class="btn buy-btn">Купить сейчас</button>
+                </div>
+            </div>
 
-        <section class="description">
-            <h3>Описание</h3>
-            <p>Spotify Premium открывает полный доступ к библиотеке из миллионов треков без рекламы. Скачивайте музыку для прослушивания без интернета и наслаждайтесь высоким качеством звука.</p>
+            <section class="description">
+                <h3>Подробное описание</h3>
+                <p>Spotify Premium открывает полный доступ к библиотеке из миллионов треков, подкастов и аудиокниг без рекламы. С подпиской Premium вы получаете:</p>
+                <ul class="features">
+                    <li>Возможность скачивать музыку для прослушивания без интернета</li>
+                    <li>Высокое качество звука (320 кбит/с)</li>
+                    <li>Неограниченное количество пропусков треков</li>
+                    <li>Персональные рекомендации на основе ваших предпочтений</li>
+                    <li>Доступ к эксклюзивным релизам и контенту</li>
+                </ul>
+            </section>
+
+            <section class="plans">
+                <!-- Individual -->
+                <div class="product-card" data-id="spotify-individual">
+                    <img src="../images/spotify-icon.png" alt="Spotify Individual" class="product-image">
+                    <h3>Spotify Individual</h3>
+                    <p class="price">199 руб./мес</p>
+                    <ul class="features">
+                        <li>1 аккаунт Premium</li>
+                        <li>Отмена подписки в любой момент</li>
+                        <li>1 месяц бесплатно при первой подписке</li>
+                    </ul>
+                    <button class="btn buy-btn">Выбрать</button>
+                </div>
+                
+                <!-- Duo -->
+                <div class="product-card" data-id="spotify-duo">
+                    <img src="../images/spotify-icon.png" alt="Spotify Duo" class="product-image">
+                    <h3>Spotify Duo</h3>
+                    <p class="price">259 руб./мес</p>
+                    <ul class="features">
+                        <li>2 аккаунта Premium</li>
+                        <li>Два отдельных профиля</li>
+                        <li>Совместный плейлист Duo Mix</li>
+                    </ul>
+                    <button class="btn buy-btn">Выбрать</button>
+                </div>
+                
+                <!-- Family -->
+                <div class="product-card" data-id="spotify-family">
+                    <img src="../images/spotify-icon.png" alt="Spotify Family" class="product-image">
+                    <h3>Spotify Family</h3>
+                    <p class="price">329 руб./мес</p>
+                    <ul class="features">
+                        <li>До 6 аккаунтов Premium</li>
+                        <li>Родительский контроль</li>
+                        <li>Семейный микс</li>
+                    </ul>
+                    <button class="btn buy-btn">Выбрать</button>
+                </div>
+            </section>
         </section>
     </main>
 

@@ -5,58 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас - Subnet Store</title>
     <link rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<meta name="theme-color" content="#121212">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="theme-color" content="#121212">
 </head>
 <body>
     <header>
-  <div class="container">
-    <div class="header-content">
-      <div class="logo">
-        <img src="images/logo.png" alt="Subnet Store">
-        <h1>Subnet Store</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-        <div class="cart-wrapper">
-          <a href="cart.html" class="cart-link">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-          </a>
-          <div class="cart-dropdown">
-            <div id="cart-items"></div>
-            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
-            <a href="checkout.html" class="btn">Оформить заказ</a>
-          </div>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Subnet Store">
+                    <h1>Subnet Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                    <div class="cart-wrapper">
+                        <a href="cart.html" class="cart-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cart-count">0</span>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div id="cart-items"></div>
+                            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+                            <a href="checkout.html" class="btn">Оформить заказ</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
-      </nav>
-    </div>
-  </div>
-</header>
+    </header>
 
     <main class="container">
-        <section class="about-section">
+        <section class="about-section hero">
             <h2>О нашем магазине</h2>
             <p>Subnet Store - это надежный поставщик цифровых услуг и подписок с 2023 года. Мы предлагаем легальный доступ к популярным сервисам по выгодным ценам.</p>
-            
-            <h3>Наши преимущества</h3>
-            <ul>
-                <li>Гарантия качества всех услуг</li>
-                <li>Быстрая доставка цифровых товаров</li>
-                <li>Круглосуточная поддержка</li>
-                <li>Конкурентные цены</li>
-                <li>Безопасные способы оплаты</li>
-            </ul>
-            
+        </section>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h4>Гарантия качества</h4>
+                <p>Все наши услуги проходят тщательную проверку перед продажей.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Быстрая доставка</h4>
+                <p>Цифровые товары доставляются моментально после оплаты.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Круглосуточная поддержка</h4>
+                <p>Наша команда поддержки готова помочь вам 24/7.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Конкурентные цены</h4>
+                <p>Мы предлагаем лучшие цены на рынке цифровых услуг.</p>
+            </div>
+        </section>
+
+        <section class="description">
             <h3>Наша миссия</h3>
-            <p>Мы стремимся сделать цифровые услуги доступными для всех, предоставляя простой и безопасный способ приобретения подписок на популярные сервисы.</p>
+            <p>Мы стремимся сделать цифровые услуги доступными для всех, предоставляя простой и безопасный способ приобретения подписок на популярные сервисы. Наша цель - стать вашим надежным партнером в мире цифровых технологий.</p>
+            
+            <h3 style="margin-top: 30px;">Наши ценности</h3>
+            <ul class="features">
+                <li>Честность и прозрачность во всех операциях</li>
+                <li>Ориентация на потребности клиента</li>
+                <li>Постоянное улучшение сервиса</li>
+                <li>Инновационный подход к решению задач</li>
+            </ul>
         </section>
     </main>
 

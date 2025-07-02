@@ -5,91 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Premium - Subnet Store</title>
     <link rel="stylesheet" href="../css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<meta name="theme-color" content="#121212">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="theme-color" content="#121212">
 </head>
 <body>
     <header>
-  <div class="container">
-    <div class="header-content">
-      <div class="logo">
-        <img src="../images/logo.png" alt="Subnet Store">
-        <h1>Subnet Store</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Главная</a></li>
-          <li><a href="../about.html">О нас</a></li>
-          <li><a href="../contacts.html">Контакты</a></li>
-        </ul>
-        <div class="cart-wrapper">
-          <a href="../cart.html" class="cart-link">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-          </a>
-          <div class="cart-dropdown">
-            <div id="cart-items"></div>
-            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
-            <a href="../checkout.html" class="btn">Оформить заказ</a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </div>
-</header>
-
-    <main class="container product-page">
-<section class="product-details">
-     <img src="../images/youtube-icon.png" alt="YouTube Premium" class="product-image">
-         <div class="product-card" data-id="youtube">
-     <h2>YouTube Premium</h2>
-     <p class="price">От 249 руб./месяц</p>
-      <ul class="features">
-                    <li>Просмотр без рекламы</li>
-                    <li>Фоновое воспроизведение</li>
-                    <li>Скачивание видео для оффлайн-просмотра</li>
-                    <li>Доступ к YouTube Music Premium</li>
-                    <li>Эксклюзивный контент</li>
-     </ul>
-      <button class="btn buy-btn">Купить сейчас</button>
-     </div>
-</section>
-
-        <section class="description">
-            <h3>Описание</h3>
-            <p>YouTube Premium - это подписка, которая открывает доступ к YouTube без рекламы, позволяет сохранять видео для просмотра офлайн, слушать музыку в фоновом режиме и дает доступ к эксклюзивному контенту. Включает в себя YouTube Music Premium.</p>
-            
-            <h3>Доступные варианты</h3>
-            <div class="plans">
-                <div class="plan">
-                    <h4>Индивидуальная</h4>
-                    <p>249 руб./мес</p>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Subnet Store">
+                    <h1>Subnet Store</h1>
+                </div>
+                <nav>
                     <ul>
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="../about.html">О нас</a></li>
+                        <li><a href="../contacts.html">Контакты</a></li>
+                    </ul>
+                    <div class="cart-wrapper">
+                        <a href="../cart.html" class="cart-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cart-count">0</span>
+                        </a>
+                        <div class="cart-dropdown">
+                            <div id="cart-items"></div>
+                            <div class="cart-total">Итого: <span id="cart-total">0</span></div>
+                            <a href="../checkout.html" class="btn">Оформить заказ</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="product-page">
+            <div class="product-details">
+                <img src="../images/youtube-icon.png" alt="YouTube Premium" class="product-image">
+                <div class="product-info">
+                    <h2>YouTube Premium</h2>
+                    <p class="price">От 249 руб./месяц</p>
+                    <ul class="features">
+                        <li>Просмотр без рекламы</li>
+                        <li>Фоновое воспроизведение</li>
+                        <li>Скачивание видео для оффлайн-просмотра</li>
+                        <li>Доступ к YouTube Music Premium</li>
+                        <li>Эксклюзивный контент</li>
+                    </ul>
+                    <button class="btn buy-btn">Купить сейчас</button>
+                </div>
+            </div>
+
+            <section class="description">
+                <h3>Подробное описание</h3>
+                <p>YouTube Premium - это подписка, которая открывает доступ к YouTube без рекламы, позволяет сохранять видео для просмотра офлайн, слушать музыку в фоновом режиме и дает доступ к эксклюзивному контенту. Включает в себя YouTube Music Premium.</p>
+            </section>
+
+            <section class="plans">
+                <!-- Индивидуальная подписка -->
+                <div class="product-card" data-id="youtube-individual">
+                    <img src="../images/youtube-icon.png" alt="YouTube Premium Индивидуальная" class="product-image">
+                    <h3>Индивидуальная</h3>
+                    <p class="price">249 руб./мес</p>
+                    <ul class="features">
                         <li>1 аккаунт</li>
                         <li>Доступ на всех устройствах</li>
+                        <li>Все преимущества Premium</li>
                     </ul>
+                    <button class="btn buy-btn">Выбрать</button>
                 </div>
-                <div class="plan">
-                    <h4>Семейная</h4>
-                    <p>349 руб./мес</p>
-                    <ul>
+                
+                <!-- Семейная подписка -->
+                <div class="product-card" data-id="youtube-family">
+                    <img src="../images/youtube-icon.png" alt="YouTube Premium Семейная" class="product-image">
+                    <h3>Семейная</h3>
+                    <p class="price">349 руб./мес</p>
+                    <ul class="features">
                         <li>До 6 аккаунтов</li>
                         <li>Отдельные рекомендации</li>
                         <li>Родительский контроль</li>
                     </ul>
+                    <button class="btn buy-btn">Выбрать</button>
                 </div>
-                <div class="plan">
-                    <h4>Студенческая</h4>
-                    <p>149 руб./мес</p>
-                    <ul>
+                
+                <!-- Студенческая подписка -->
+                <div class="product-card" data-id="youtube-student">
+                    <img src="../images/youtube-icon.png" alt="YouTube Premium Студенческая" class="product-image">
+                    <h3>Студенческая</h3>
+                    <p class="price">149 руб./мес</p>
+                    <ul class="features">
                         <li>Требуется подтверждение статуса</li>
                         <li>Все преимущества индивидуальной</li>
+                        <li>Специальная цена</li>
                     </ul>
+                    <button class="btn buy-btn">Выбрать</button>
                 </div>
-            </div>
+            </section>
         </section>
     </main>
 
